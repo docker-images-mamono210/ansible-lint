@@ -92,7 +92,7 @@ jobs:
       - name: Build and push 2
         uses: docker/build-push-action@v3
         with:
-          file: ${{ matrix.molecule-driver }}/Dockerfile
+          file: Dockerfile
           push: true
           tags: ghcr.io/docker-images-mamono210/ansible-lint:latest
 
