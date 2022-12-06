@@ -1,0 +1,23 @@
+---
+version: 2
+registries:
+  ghcr:
+    type: docker-registry
+    url: ghcr.io
+    username: mamono210
+    password: ${{ secrets.CR_PAT}}
+updates:
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    registries:
+      - ghcr
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
