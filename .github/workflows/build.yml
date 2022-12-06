@@ -108,6 +108,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: yaml-lint
-        uses: ibiqlik/action-yamllint@665205c3255fcf157ef8dc9a40d527fe025a4bc8
+        uses: ibiqlik/action-yamllint@2576378a8e339169678f9939646ee3ee325e845c
         with:
           config_file: .yamllint
