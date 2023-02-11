@@ -63,7 +63,7 @@ jobs:
           password: ${{ secrets.CR_PAT}}
 
       - name: Build and export to Docker
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: .
           file: Dockerfile
@@ -83,14 +83,14 @@ jobs:
           echo "tag=${tag}" >> $GITHUB_OUTPUT
 
       - name: Build and push 1
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           file: Dockerfile
           push: true
           tags: ghcr.io/docker-images-mamono210/ansible-lint:${{ steps.ansible-lint_version.outputs.tag }}_ansible-${{ steps.ansible_version.outputs.tag }}
 
       - name: Build and push 2
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           file: ${{ matrix.molecule-driver }}/Dockerfile
           push: true
