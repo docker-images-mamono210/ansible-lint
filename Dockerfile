@@ -1,4 +1,4 @@
-FROM python:3.11.3-slim-buster as builder
+FROM python:3.11.4-slim-buster as builder
 
 # Install required packages
 RUN apt-get update \
@@ -13,7 +13,7 @@ COPY requirements.txt /tmp/
 # Install Ansible lint and Ansible
 RUN pip3 install --no-cache-dir --no-compile -r /tmp/requirements.txt
 
-FROM python:3.11.3-slim-buster as production
+FROM python:3.11.4-slim-buster as production
 
 # Install required packages
 RUN apt-get update \
